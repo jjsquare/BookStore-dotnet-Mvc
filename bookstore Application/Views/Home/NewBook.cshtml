@@ -1,0 +1,55 @@
+﻿@model BooksViewModel
+<link rel="stylesheet" href="~/css/EditPage.css" asp-append-version="true" />
+
+<div class="container">
+    <h1>Enter the details</h1>
+
+    <form asp-controller="Home" class="registartion-form" asp-action="submit" method="post">
+        <table class="regis">
+            <input asp-for="BookId" hidden />
+            <input asp-for="authorID" hidden />
+            <input asp-for="genreId" hidden />
+            <tr class="form-group">
+
+                <td>   <label asp-for="BookName"></label></td>
+                <td> <input asp-for="BookName" class="form-control" placeholder="The Fault in Our Stars" maxlength="30" required /></td>
+                <span asp-validation-for="BookName"></span>
+            </tr>
+            <tr class="form-group">
+                <td>  <label asp-for="Author"></label></td>
+                <td>  <input asp-for="Author" class="form-control" placeholder="John Green" maxlength="30" required /></td>
+                <span asp-validation-for="Author"></span>
+            </tr>
+            <tr class="form-group">
+                <td>    <label asp-for="Genre"></label></td>
+                <td>   <input asp-for="Genre" class="form-control" placeholder="Young Adult" maxlength="30" required /></td>
+                <span asp-validation-for="Genre"></span>
+            </tr>
+            <tr class="form-group">
+                <td>   <label asp-for="ISBN"></label></td>
+                <td>   <input asp-for="ISBN" class="form-control" placeholder="9780141345659" maxlength="10" min="1000000000" max="9999999999" required /></td>
+                <span asp-validation-for="ISBN"></span>
+            </tr>
+            <div class="form-group">
+            <td>   <label asp-for="Publication"></label></td>
+            <td>   <input asp-for="Publication" class="form-control" placeholder="Dutton Books" maxlength="30" required /></td>
+            <span asp-validation-for="Publication"></span>
+</div>
+<tr class="form-group">
+    <td>  <label asp-for="ReleaseYear"></label></td>
+    <td>      <input asp-for="ReleaseYear" class="form-control" placeholder="2014" max="2023" maxlength="4" min="1900" pattern="^[1-2][0-9][0-9][0-9]$" required /></td>
+    <span asp-validation-for="ReleaseYear"></span>
+</tr>
+<tr class="form-group">
+    <td> <label asp-for="price"></label></td>
+    <td><input asp-for="price" id="price" class="form-control" placeholder="199.9" autocomplete="off" maxlength="5" min="1.0"  required /></td>
+    <span asp-validation-for="price"></span>
+</tr>
+<tr>
+    <td><button type="submit" class="submit">Submit</button></td>
+
+</tr>
+</table>
+</form>
+
+</div>

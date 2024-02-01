@@ -1,0 +1,53 @@
+﻿@model BooksViewModel
+<link rel="stylesheet" href="~/css/EditPage.css" asp-append-version="true" />
+<div class="container">
+    <h1>Edit the details</h1>
+
+    <form asp-controller="Home" class="registartion-form" asp-action="edit" method="post">
+        <table class="regis">
+            <input asp-for="BookId" hidden />
+            <input asp-for="authorID" hidden />
+            <input asp-for="genreId" hidden />
+            <tr class="form-group">
+
+                <td>   <label asp-for="BookName"></label></td>
+                <td> <input asp-for="BookName" class="form-control" maxlength="30" required /></td>
+            </tr>
+            <tr class="form-group">
+                <td>  <label asp-for="Author"></label></td>
+                <td>  <input asp-for="Author" class="form-control" maxlength="30" required /></td>
+            </tr>
+            <tr class="form-group">
+                <td>    <label asp-for="Genre"></label></td>
+                <td>   <input asp-for="Genre" class="form-control" maxlength="30" required /></td>
+            </tr>
+            <tr class="form-group">
+                <td>   <label asp-for="ISBN"></label></td>
+                <td>   <input asp-for="ISBN" class="form-control" maxlength="13" minlength="10"  required /></td>
+            </tr>
+            <div class="form-group">
+            <td>    <label asp-for="Publication"></label></td>
+            <td>   <input asp-for="Publication" class="form-control" maxlength="30" required /></td>
+</div>
+<tr class="form-group">
+    <td>  <label asp-for="ReleaseYear"></label></td>
+    <td>      <input asp-for="ReleaseYear" class="form-control" maxlength="4" pattern="^(19|20)\\d{2}$"  required /></td>
+</tr>
+<tr class="form-group">
+    <td> <label asp-for="price">Price</label></td>
+    <td><input asp-for="price" class="form-control" maxlength="5" required /></td>
+</tr>
+<tr>
+    <td><button type="submit" class="submit">Submit</button></td>
+
+    <td>
+        <button class="submit"  asp-area="" asp-controller="Home" asp-action="NewBook">New book</button>
+    </td>
+    <td>
+        <button class="submit"  asp-area="" asp-controller="Home" asp-action="BookList">Cancel</button>
+    </td>
+</tr>
+</table>
+</form>
+
+</div>
